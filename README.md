@@ -7,6 +7,8 @@
 * Express.js
 * node.js
 * JavaScript
+* HTML
+* CSS
 
 ## Usage:
 * GIVEN a note-taking application
