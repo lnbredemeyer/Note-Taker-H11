@@ -22,6 +22,18 @@ app.get('/api/notes', (req, res) => {
 });
 
 // Post Route
+app.post('/api/notes', (req, res) => {
+    fs.readFile('./db/db.json', 'utf-8', (err, data) => {
+        if (err) throw err;
+        const parsedData = JSON.parse(data);
+        const note = req.body;
+        parsedData.push(note);
+        fs.writeFile('./db/db.json', JSON.stringify(parsedData), (err) => {
+            if (err) throw err;
+            res.json(parsedData);
+          });
+      });
+});
 
 // Delete Route
 
